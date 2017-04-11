@@ -9,7 +9,7 @@
           </div>
           <div class="row">
             <div class="col-md-4">
-              <%= link_to t(".btn_add_category"), new_admin_category_path,
+              <%= link_to t(".btn_add_lesson"), new_admin_lesson_path,
                 class: "btn btn-info", remote: true %>
             </div>
             <div class="pull-right">
@@ -21,29 +21,32 @@
               <thead class="text-center">
                 <th><%= t ".id" %></th>
                 <th>
-                  <%= sort_link @search_category, :name, t(".name") %>
+                  <%= sort_link @search_lesson, :category_id, t(".category") %>
+                </th>
+                <th>
+                  <%= sort_link @search_lesson, :name, t(".name") %>
                 </th>
                 <th><%= t ".description" %></th>
                 <th>
-                  <%= sort_link @search_category, :created_at, t(".created_at") %>
+                  <%= sort_link @search_lesson, :name, t(".created_at") %>
                 </th>
                 <th><%= t ".action" %></th>
               </thead>
               <tbody>
-                <% @categories.each_with_index do |category, index| %>
-                  <tr id="category-<%= category.id %>">
+                <% @lessons.each_with_index do |lesson, index| %>
+                  <tr id="lesson-<%= lesson.id %>">
                     <td><%= index + 1 %></td>
-                    <td><%= category.name %></td>
-                    <td><%= category.description %></td>
-                    <td><%= category.created_at.strftime("%m/%d/%Y") %></td>
-
+                    <td><%= lesson.category&.name %></td>
+                    <td><%= lesson.name %></td>
+                    <td><%= lesson.description %></td>
+                    <td><%= lesson.created_at.strftime("%m/%d/%Y") %></td>
                     <td class="text-center">
-                      <%= link_to edit_admin_category_path(category), class: "btn btn-info btn-simple btn-xs",
+                      <%= link_to edit_admin_lesson_path(lesson), class: "btn btn-info btn-simple btn-xs",
                         data: {original_title: "Edit"}, remote: true do %>
                         <i class="material-icons info">edit</i>
                       <% end %>
-                      <button type="button" rel="tooltip" title="" class="btn-delete-category btn btn-danger btn-simple btn-xs btn-delete-lesson"
-                        data-original-title="Remove" data-value="<%= category.id %>">
+                      <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs btn-delete-lesson"
+                        data-original-title="Remove" data-value="<%= lesson.id %>">
                         <i class="material-icons">close</i>
                       <div class="ripple-container"></div></button>
                     </td>
@@ -51,7 +54,7 @@
                 <% end %>
               </tbody>
             </table>
-            <%= paginate @categories %>
+            <%= paginate @lessons %>
           </div>
         </div>
       </div>

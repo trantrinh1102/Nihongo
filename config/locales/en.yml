@@ -36,3 +36,32 @@ en:
         description: "Description"
         btn_close: "Cancel"
         btn_update_category: "Save changes"
+    lessons:
+      search_form:
+        search: "search"
+      index:
+        btn_add_lesson: "Add lesson"
+        id: "No"
+        category: "Category"
+        name: "Name"
+        description: "Description"
+        created_at: "Created At"
+        action: "Actions"
+      modal_add_lesson:
+        title: "Form Add Lesson"
+        category: "Category"
+        placeholder_name: "Enter name"
+        placeholder_description: "Enter Description"
+        name: "Name"
+        description: "Description"
+        btn_close: "Cancel"
+        btn_add_category: "Save"
+      modal_update_lesson:
+        title: "Form Update Lesson"
+        category: "Category"
+        placeholder_name: "Enter name"
+        placeholder_description: "Enter Description"
+        name: "Name"
+        description: "Description"
+        btn_close: "Cancel"
+        btn_update_lesson: "Save changes"

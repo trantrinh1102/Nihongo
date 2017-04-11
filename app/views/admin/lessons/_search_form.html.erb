@@ -1,0 +1,9 @@
+<%= search_form_for @search_lesson, url: admin_lessons_path, id: "search-form navbar-right", class: "navbar-form" do |f| %>
+  <div class="form-group  is-empty">
+    <%= f.search_field :name_cont,
+      class: "search-query form-control", placeholder: t(".search") %>
+  </div>
+  <%= button_tag type: "submit", class: "btn btn-white btn-round btn-just-icon" do %>
+    <i class="material-icons">search</i><div class="ripple-container"></div>
+  <% end %>
+<% end %>

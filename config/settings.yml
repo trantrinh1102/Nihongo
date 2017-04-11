@@ -1,0 +1,4 @@
+paginate:
+  small_page: 10
+  medium_page: 20
+  large_page: 30

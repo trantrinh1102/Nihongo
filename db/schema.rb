@@ -85,13 +85,9 @@ ActiveRecord::Schema.define(version: 20170409015943) do
 
   create_table "results", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "question_id"
     t.integer  "test_id"
-    t.integer  "answer_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["answer_id"], name: "index_results_on_answer_id"
-    t.index ["question_id"], name: "index_results_on_question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["test_id"], name: "index_results_on_test_id"
     t.index ["user_id"], name: "index_results_on_user_id"
   end

@@ -1,0 +1,83 @@
+<div class="content">
+  <%= render "layouts/flash", flash: flash %>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card card-nav-tabs">
+            <div class="card-header" data-background-color="blue">
+              <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                  <span class="nav-tabs-title">Table:</span>
+                  <ul class="nav nav-tabs" data-tabs="tabs">
+                    <li class="active pull-right">
+                      <%= link_to new_admin_grammar_path, data: {original_title: "New"} do %>
+                        <i class="material-icons">bug_report</i>
+                        <%= t ".btn_add" %>
+                      <div class="ripple-container"></div>
+                      <% end %>
+                   </li>
+                    <li class="">
+                      <i class="material-icons">list</i>
+                        <%= t ".title" %>
+                      <div class="ripple-container"></div></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-content table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th><%= t ".id" %></th>
+                  <th><%= t ".image" %></th>
+                  <th><%= t ".lesson" %></th>
+                  <th><%= t ".title_grammar" %></th>
+                  <th><%= t ".created_at" %></th>
+                  <th><%= t ".action" %></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @grammars.each_with_index do |grammar, index| %>
+                  <tr>
+                    <td><%= index + 1 %></td>
+                    <td class="td-image">
+                      <div class="img-container">
+                        <%= image_tag "blog-1.jpg" %>
+                      </div>
+                    </td>
+                    <td>
+                      <%= grammar.lesson&.name %>
+                    </td>
+                    <td>
+                      <%= grammar.title %>
+                    </td>
+                    <td>
+                      <%= grammar.created_at.strftime("%F") %>
+                    </td>
+                    <td class="td-actions text-center">
+                      <%= link_to admin_grammar_path(grammar), class:"btn btn-info btn-simple btn-icon",
+                        data: {original_title: "View"} do %>
+                        <i class="fa fa-image"></i>
+                      <% end %>
+                      <%= link_to edit_admin_grammar_path(grammar), class:"btn btn-success btn-simple btn-icon",
+                        data: {original_title: "Edit"} do %>
+                        <i class="fa fa-edit"></i>
+                      <% end %>
+                      <button type="button" rel="tooltip" data-placement="left" data-value="<%= grammar.id %>"
+                        class="btn btn-danger btn-simple btn-icon " id="btn-delete-gramar" data-original-title="Remove">
+                        <i class="fa fa-times"></i>
+                      </button>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

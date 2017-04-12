@@ -18,3 +18,4 @@
 //= require material-dashboard
 //= require material.min
 //= require chartist.min
+//= require ckeditor/init

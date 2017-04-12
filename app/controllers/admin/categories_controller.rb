@@ -1,4 +1,4 @@
-class Admin::CategoriesController <  Admin::AdminController
+class Admin::CategoriesController < Admin::AdminController
   before_action :load_category, only: [:edit, :update, :destroy]
   def index
     @search_category = Category.ransack params[:q]

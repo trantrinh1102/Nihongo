@@ -1,0 +1,14 @@
+<div class="content">
+  <%= render "layouts/flash", flash: flash %>
+  <div class="container-fluid">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header" data-background-color="blue">
+          <h4 class="title"><%= t ".title" %></h4>
+          <p class="category"></p>
+        </div>
+        <%= render "form" %>
+      </div>
+    </div>
+  </div>
+</div>

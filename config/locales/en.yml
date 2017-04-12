@@ -10,6 +10,25 @@ en:
     failed: "Action failed"
     updated: "Updated success"
     destroy: "Deletes success"
+    grammars:
+      form:
+        lesson: "Lesson"
+        title: "title"
+        btn_submit: "Submit"
+      edit:
+        title: "Edit grammar"
+      index:
+        btn_add: "Add grammar"
+        title: "List grammar"
+        id: "No"
+        image: "Image Lesson"
+        lesson: "Lesson"
+        title_grammar: "title"
+        name: "Name"
+        created_at: "Created At"
+        action: "Actions"
+      new:
+        title: "Add grammar"
     categories:
       search_form:
         search: "search"

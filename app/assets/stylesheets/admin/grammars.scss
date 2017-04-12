@@ -1,0 +1,20 @@
+.table .img-container {
+    width: 180px;
+    height: 120px;
+    overflow: hidden;
+    display: block;
+    border-radius: 6px;
+}
+
+.img-container img {
+    width: 100%;
+}
+
+img {
+    vertical-align: middle;
+    border: 0;
+    box-sizing: border-box;
+}
+.table .td-image{
+    padding-left: 40px;
+}

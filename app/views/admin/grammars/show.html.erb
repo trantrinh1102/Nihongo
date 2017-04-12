@@ -1,0 +1,14 @@
+<div class="content">
+  <%= render "layouts/flash", flash: flash %>
+  <div class="container-fluid">
+    <div class="tim-typo">
+      <h1>
+        <%= @grammar.lesson&.name %>
+      </h1>
+    </div>
+    <h3>
+      <%= @grammar.title %>
+    </h3>
+    <%= @grammar.content.html_safe %>
+  </div>
+</div>

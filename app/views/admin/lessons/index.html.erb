@@ -42,7 +42,7 @@
                     <td><%= lesson.created_at.strftime("%m/%d/%Y") %></td>
                     <td class="text-center">
                       <%= link_to edit_admin_lesson_path(lesson), class: "btn btn-info btn-simple btn-xs",
-                        data: {original_title: "Edit"}, remote: true do %>
+                        data: {original_title: "Edit"} do %>
                         <i class="material-icons info">edit</i>
                       <% end %>
                       <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs btn-delete-lesson"

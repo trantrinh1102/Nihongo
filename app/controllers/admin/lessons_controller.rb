@@ -1,5 +1,5 @@
 class Admin::LessonsController <  Admin::AdminController
-  before_action :load_lesson, only: [:edit, :update, :destroy]
+  before_action :load_lesson, only: [:edit, :update, :destroy, :show]
   before_action :load_categories, only: [:new, :edit]
 
   def index
@@ -9,6 +9,7 @@ class Admin::LessonsController <  Admin::AdminController
 
   def new
     @lesson = Lesson.new
+    @lesson.kanjis.build
     respond_to do |format|
       format.js
     end
@@ -17,19 +18,15 @@ class Admin::LessonsController <  Admin::AdminController
   def create
     @lesson = Lesson.new lesson_params
     if @lesson.save
+      Kanji.import_csv @lesson.id, lesson_params[:file] if lesson_params[:file].present?
       add_message_flash(:success, t("admin.created"))
     else
       add_message_flash(:error, t("admin.failed"))
     end
-    respond_to do |format|
-      format.js
-    end
+    redirect_to admin_lessons_path
   end
 
   def edit
-    respond_to do |format|
-      format.js
-    end
   end
 
   def update
@@ -37,9 +34,6 @@ class Admin::LessonsController <  Admin::AdminController
       add_message_flash(:success, t("admin.updated"))
     else
       add_message_flash(:error, t("admin.failed"))
-    end
-    respond_to do |format|
-      format.js
     end
   end
 
@@ -58,7 +52,8 @@ class Admin::LessonsController <  Admin::AdminController
 
   private
   def lesson_params
-    params.require(:lesson).permit :name, :description, :category_id
+    params.require(:lesson).permit :name, :description, :category_id, :file,
+      kanjis_attributes: [:id, :character, :vietnamese, :onyomi, :kunyomi, :example, :_destroy]
   end
 
   def load_lesson

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170412094413) do
+ActiveRecord::Schema.define(version: 20170412094414) do
 
   create_table "anwers", force: :cascade do |t|
     t.integer  "question_id"
@@ -54,11 +54,20 @@ ActiveRecord::Schema.define(version: 20170412094413) do
     t.integer  "lesson_id"
     t.string   "character"
     t.string   "vietnamese"
-    t.string   "romaji"
+    t.string   "onyomi"
     t.string   "example"
+    t.string   "kunyomi"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lesson_id"], name: "index_kanjis_on_lesson_id"
+  end
+
+  create_table "lesson_kanjis", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "lesson_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_lesson_kanjis_on_lesson_id"
   end
 
   create_table "lesson_tests", force: :cascade do |t|

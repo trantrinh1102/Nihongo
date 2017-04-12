@@ -1,4 +1,5 @@
 class Lesson < ApplicationRecord
+  attr_accessor :file
   belongs_to :category
 
   has_many :videos
@@ -8,4 +9,6 @@ class Lesson < ApplicationRecord
   has_many :lesson_test
 
   validates :name, :description, presence: true
+
+  accepts_nested_attributes_for :kanjis, allow_destroy: true
 end

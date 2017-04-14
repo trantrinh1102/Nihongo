@@ -15,6 +15,17 @@ img {
     border: 0;
     box-sizing: border-box;
 }
-.table .td-image{
+.table .td-image {
     padding-left: 40px;
 }
+
+.modal-lesson-content {
+  height: 300px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+// .modalAddlesson{
+//   width: 800px !important;
+//   margin-left:auto;
+//   margin-right:auto;
+// }

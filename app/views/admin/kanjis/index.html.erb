@@ -16,14 +16,7 @@
                         <%= t ".csv" %>
                       <div class="ripple-container"></div>
                       <% end %>
-                   </li>
-                    <li class="active pull-right">
-                      <%= link_to new_admin_kanji_path, data: {original_title: "New"} do %>
-                        <i class="material-icons">bug_report</i>
-                        <%= t ".btn_add" %>
-                      <div class="ripple-container"></div>
-                      <% end %>
-                   </li>
+                    </li>
                     <li class="">
                       <i class="material-icons">list</i>
                         <%= t ".title" %>
@@ -39,9 +32,12 @@
               <thead>
                 <tr>
                   <th><%= t ".id" %></th>
-                  <th><%= t ".image" %></th>
                   <th><%= t ".lesson" %></th>
-                  <th><%= t ".title_grammar" %></th>
+                  <th><%= t ".kanji" %></th>
+                  <th><%= t ".onyomi" %></th>
+                  <th><%= t ".kunyomi" %></th>
+                  <th><%= t ".vietnamese" %></th>
+                  <th><%= t ".example" %></th>
                   <th><%= t ".created_at" %></th>
                   <th><%= t ".action" %></th>
                 </tr>
@@ -50,15 +46,12 @@
                 <% @kanjis.each_with_index do |kanji, index| %>
                   <tr>
                     <td><%= index + 1 %></td>
-                    <td class="td-image">
-                      <div class="img-container">
-                        <%= image_tag "blog-1.jpg" %>
-                      </div>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
+                    <td><%= kanji.lesson.name %></td>
+                    <td><%= kanji.character %></td>
+                    <td><%= kanji.onyomi %></td>
+                    <td><%= kanji.kunyomi %></td>
+                    <td><%= kanji.vietnamese %></td>
+                    <td><%= kanji.example %></td>
                     <td>
                       <%= kanji.created_at.strftime("%F") %>
                     </td>
@@ -68,7 +61,7 @@
                         <i class="fa fa-image"></i>
                       <% end %>
                       <%= link_to edit_admin_kanji_path(kanji), class:"btn btn-success btn-simple btn-icon",
-                        data: {original_title: "Edit"} do %>
+                        data: {original_title: "Edit"}, remote: true do %>
                         <i class="fa fa-edit"></i>
                       <% end %>
                       <button type="button" rel="tooltip" data-placement="left" data-value="<%= kanji.id %>"

@@ -5,11 +5,12 @@
         <div class="card card-stats">
           <div class="card-header" data-background-color="orange">
             <i class="material-icons">content_copy</i>
+            <p class="category">grammar</p>
           </div>
           <div class="card-content">
-            <p class="category">grammar</p>
             <h3 class="title">
               <%= @lesson.grammars.size %><small>grammars</small></h3>
+              <%= link_to "Add New Grammar", new_admin_grammar_path(lesson_id: @lesson.id), class:"btn btn-success" %>
           </div>
           <div class="card-footer">
             <div class="stats">
@@ -23,16 +24,17 @@
         <div class="card card-stats">
           <div class="card-header" data-background-color="green">
             <i class="material-icons">store</i>
+            <p class="category">Video</p>
           </div>
           <div class="card-content">
-            <p class="category">Video</p>
             <h3 class="title">
               <%= @lesson.videos.size %><small>video</small></h3>
+              <%= link_to "Add New Video", new_admin_video_path(lesson_id: @lesson.id), class:"btn btn-success" %>
           </div>
           <div class="card-footer">
             <div class="stats">
               <i class="material-icons">date_range</i>
-              <%= link_to "Get more details", admin_grammars_path %>
+              <%= link_to "Get more details", admin_videos_path(lesson_id: @lesson.id) %>
             </div>
           </div>
         </div>
@@ -41,33 +43,36 @@
         <div class="card card-stats">
           <div class="card-header" data-background-color="red">
             <i class="material-icons"></i>
+            <p class="category">Kanji</p>
           </div>
           <div class="card-content">
-            <p class="category">Kanji</p>
             <h3 class="title">
-              <%= @lesson.lesson_kanjis.size %><small>video</small></h3>
+              <%= @lesson.kanjis.size %><small>Kanji</small></h3>
+              <%= link_to "Add New Kanji", new_admin_kanji_path(lesson_id: @lesson.id), class:"btn btn-success", remote: true %>
           </div>
           <div class="card-footer">
             <div class="stats">
               <i class="material-icons">local_offer</i>
-              <%= link_to "Get more details", admin_grammars_path %>
+              <%= link_to "Get more details", admin_kanjis_path(lesson_id: @lesson.id) %>
             </div>
           </div>
         </div>
       </div>
-
       <div class="col-lg-3 col-md-6 col-sm-6">
         <div class="card card-stats">
           <div class="card-header" data-background-color="blue">
             <i class="fa fa-twitter"></i>
+            <p class="category">vocabulary</p>
           </div>
           <div class="card-content">
-            <p class="category">vocabulary</p>
-            <h3 class="title">+245</h3>
+            <h3 class="title">
+              <%= @lesson.vocabularies.size %><small>vocabularies</small></h3>
+              <%= link_to "Add New Kanji", new_admin_vocabulary_path(lesson_id: @lesson.id), class:"btn btn-success" %>
           </div>
           <div class="card-footer">
             <div class="stats">
-              <i class="material-icons">update</i> Just Updated
+              <i class="material-icons">update</i>
+              <%= link_to "Get more details", admin_vocabularies_path(lesson_id: @lesson.id) %>
             </div>
           </div>
         </div>
@@ -111,103 +116,7 @@
                 </div>
               </div>
             </div>
-            <div class="card card-nav-tabs">
-              <div class="card-header" data-background-color="white">
-                <div class="nav-tabs-navigation">
-                  <div class="nav-tabs-wrapper">
-                    <span class="nav-tabs-title">Tasks:</span>
-                    <ul class="nav nav-tabs" data-tabs="tabs">
-                      <li class="active">
-                        <a href="#kanji" data-toggle="tab" aria-expanded="false">
-                        <i class="material-icons">code</i>
-                        Lesson kanji
-                        <div class="ripple-container"></div></a>
-                      </li>
-                      <li class="">
-                        <a href="#vocabulary" data-toggle="tab" aria-expanded="true">
-                        <i class="material-icons">cloud</i>
-                        Lesson vocabularies
-                        <div class="ripple-container"></div></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="card-content modal-lesson-content">
-                <div class="tab-content">
-                  <div class="tab-pane active" id="kanji">
-                    <div class="lesson_kanji_form content-block-input-clones">
-                      <% @lesson.lesson_kanjis.each_with_index do |f, index|%>
-                        <div class="card input-form-kanji">
-                          <div class="form-group label-floating is-empty">
-                            <div class="col-md-10">
-                              <label class=""><%= t ".name" %></label>
-                              <%= text_field_tag "lesson[lesson_kanjis_attributes][#{index + 1}][title]", f.title, id:"kanji_title",
-                              class: "form-control", required: true %>
-                              <%= hidden_field_tag "lesson[lesson_kanjis_attributes][#{index + 1}][id]", f.id%>
-                              <%= hidden_field_tag "lesson[lesson_kanjis_attributes][#{index + 1}][_destroy]", f.id, class:"destroyItem",
-                                disabled: true %>
-                            </div>
-                            <div class="col-md-2">
-                              <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs remove-update"
-                              data-original-title="Remove" data-value="1">
-                              <i class="material-icons">close</i>
-                              <div class="ripple-container"></div></button>
-                            </div>
-                          </div>
-                        </div>
-                      <% end %>
-                      <div class="card input-form-kanji clone-item" style="display: none;">
-                        <div class="form-group label-floating is-empty">
-                          <div class="col-md-10">
-                            <label class="control-label"><%= t ".name" %></label>
-                            <%= text_field_tag "lesson[lesson_kanjis_attributes][0][title]", nil, id:"kanji_title",
-                            class: "form-control", required: true, disabled: true %>
-                          </div>
-                          <div class="col-md-2">
-                            <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs remove-clone"
-                            data-original-title="Remove" data-value="1">
-                            <i class="material-icons">close</i>
-                            <div class="ripple-container"></div></button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button type="button" class="btn btn-info btn-xs btn-add-lesson-kanji"
-                    data-original-title="Add" ">
-                    <i class="material-icons">add</i>
-                    <div class="ripple-container"></div></button>
-                  </div>
-                  <div class="tab-pane" id="vocabulary">
-                    <div class="form-group">
-                      <div class="row">
-                        <div class="col-md-3">
-                          <label><%= t ".name" %></label>
-                        </div>
-                        <div class="col-md-8">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="row">
-                        <div class="col-md-3">
-                          <label><%= t ".name" %></label>
-                        </div>
-                        <div class="col-md-8">
-                        </div>
-                      </div>
-                    </div>
-                    <button type="button" class="btn btn-info btn-xs btn-delete-lesson"
-                    data-original-title="Add" ">
-                    <i class="material-icons">add</i>
-                    <div class="ripple-container"></div></button>
-                  </div>
-                </div>
-              </div>
-              <button type="button" class="btn btn-danger" data-dismiss="modal">
-                <%= t ".btn_close" %></button>
-              <button type="submit" class="btn btn-info"><%= t ".btn_add_category" %></button>
-            </div>
+            <button type="submit" class="btn btn-success pull-right"><%= t ".btn_update_lesson" %></button>
           <% end %>
         </div>
       </div>

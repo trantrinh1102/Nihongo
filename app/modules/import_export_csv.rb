@@ -11,7 +11,7 @@ module ImportExportCSV
     errors = []
     CSV.foreach(file.path, headers: true, header_converters: :symbol) do |row|
       new_object = self.new row.to_hash
-      binding.pry
+      new_object[:lesson_id] = lesson_id
       unless new_object.save
         errors << I18n.t(:row_erros, row: $.)
         errors += new_object.errors.full_messages

@@ -1,0 +1,111 @@
+<div class="modal fade" id="addKanji" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modalAddlesson modal-lg ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close"  data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+      </div>
+      <%= form_for [:admin, kanji], multipart: true do |f| %>
+        <div class="card card-nav-tabs">
+          <div class="card-header" data-background-color="blue">
+            <div class="nav-tabs-navigation">
+              <div class="nav-tabs-wrapper">
+                <h4 class="modal-title" id="myModalLabel">
+                  <%= t ".title" %>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="card-content modal-kanji-content">
+            <div class="tab-content">
+              <div class="tab-pane active" id="kanji">
+                <div class="row importCSV">
+                  <div class="checkbox col-md-1">
+                    <label>
+                      <input type="checkbox" name="optionsCheckboxes" id="checkboxImportKanji">
+                      <span class="checkbox-material"><span class="check"></span></span>
+                    </label>
+                  </div>
+                  <div class="col-md-2">
+                    <%= f.file_field :file, accept: ".csv", class:"btn btn-info btn-xs button", title: "Upload file",
+                      disabled: true, id: "importKanji" %>
+                    <%= f.hidden_field :lesson_id, value: lesson_id %>
+                  </div>
+                </div>
+                <div class="lesson_kanji_form content-block-input-clones">
+                  <div class="card input-form-kanji clone-item">
+                    <div class="row">
+                      <div class="col-md-1 pull-right">
+                        <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs remove-clone"
+                          data-original-title="Remove" data-value="1">
+                        <i class="material-icons">close</i>
+                        <div class="ripple-container"></div></button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group label-floating is-empty">
+                          <label class="control-label"><%= t ".character" %></label>
+                          <%= f.text_field :character, id:"kanji_title",
+                            class: "form-control" %>
+                          <span class="material-input"></span>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group label-floating is-empty">
+                          <label class="control-label"><%= t ".vietnamese" %></label>
+                          <%= f.text_field :vietnamese, id:"vietnamese",
+                            class: "form-control" %>
+                          <span class="material-input"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group label-floating is-empty">
+                          <label class="control-label"><%= t ".kunyomi" %></label>
+                          <%= f.text_field :kunyomi, id:"kunyomi",
+                            class: "form-control" %>
+                          <span class="material-input"></span>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group label-floating is-empty">
+                          <label class="control-label"><%= t ".onyomi" %></label>
+                          <%= f.text_field :onyomi, id:"onyomi",
+                            class: "form-control" %>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group label-floating is-empty">
+                          <label class="control-label"><%= t ".example" %></label>
+                          <%= f.text_field :example, id:"example",
+                            class: "form-control" %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-info btn-xs btn-add-lesson-kanji"
+                  data-original-title="Add" ">
+                  <i class="material-icons">add</i>
+                <div class="ripple-container"></div></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            <%= t ".btn_close" %></button>
+          <button type="submit" class="btn btn-info"><%= t ".btn_add_category" %></button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

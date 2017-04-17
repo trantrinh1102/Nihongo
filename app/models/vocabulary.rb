@@ -1,3 +1,3 @@
 class Vocabulary < ApplicationRecord
-  has_many :lesson_vocabularies
+  belongs_to :lesson
 end

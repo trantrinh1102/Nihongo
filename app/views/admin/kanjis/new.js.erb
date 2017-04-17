@@ -1,0 +1,5 @@
+$("section.modal-content").html(
+  "<%= j render "modal_add_kanji", kanji: @kanji, lesson_id: params[:lesson_id] %>");
+$("#addKanji").modal("show");
+cloneLessonKanji();
+checkBoxEvent();

@@ -4,14 +4,30 @@
     <div class="row">
       <div class="col-md-12">
         <div class="card card-plain">
-          <div class="card-header" data-background-color="blue">
-            <h4 class="title"><%= t ".list_category" %></h4>
+          <div class="card card-nav-tabs">
+            <div class="card-header" data-background-color="blue">
+              <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                  <span class="nav-tabs-title">Table:</span>
+                  <ul class="nav nav-tabs" data-tabs="tabs">
+                    <li class="active pull-right">
+                      <%= link_to new_admin_category_path, data: {original_title: "New"} do %>
+                        <i class="material-icons">bug_report</i>
+                        <%= t ".btn_add_category" %>
+                      <div class="ripple-container"></div>
+                      <% end %>
+                   </li>
+                    <li class="">
+                      <i class="material-icons">list</i>
+                        <%= t ".list_category" %>
+                      <div class="ripple-container"></div></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="row">
-            <div class="col-md-4">
-              <%= link_to t(".btn_add_category"), new_admin_category_path,
-                class: "btn btn-info", remote: true %>
-            </div>
             <div class="pull-right">
               <%= render "search_form" %>
             </div>

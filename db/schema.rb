@@ -142,6 +142,7 @@ ActiveRecord::Schema.define(version: 20170412094414) do
   end
 
   create_table "vocabularies", force: :cascade do |t|
+    t.integer  "lesson_id"
     t.string   "japanese"
     t.string   "vietnamese"
     t.string   "romaji"
@@ -150,6 +151,7 @@ ActiveRecord::Schema.define(version: 20170412094414) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["lesson_id"], name: "index_vocabularies_on_lesson_id"
   end
 
 end

@@ -75,7 +75,7 @@ en:
         description: "Description"
         btn_close: "Cancel"
         btn_add_category: "Save"
-      modal_update_lesson:
+      edit:
         title: "Form Update Lesson"
         category: "Category"
         placeholder_name: "Enter name"
@@ -84,3 +84,31 @@ en:
         description: "Description"
         btn_close: "Cancel"
         btn_update_lesson: "Save changes"
+
+    kanjis:
+      index:
+        title: "List all kanji"
+        lesson: "Lesson"
+        kanji: "Kanji"
+        onyomi: "Onyomi"
+        kunyomi: "Kunyomi"
+        vietnamese: "Vietnamese"
+        example: "Example"
+        created_at: "Created At"
+        action: "Actions"
+      modal_add_kanji:
+        title: "Add kanji"
+        character: "character"
+        vietnamese: "vietnamese"
+        kunyomi: "kunyomi"
+        onyomi: "onyomi"
+        example: "example"
+      modal_update_kanji:
+        title: "Update Kanji"
+      form:
+        character: "character"
+        vietnamese: "vietnamese"
+        kunyomi: "kunyomi"
+        onyomi: "onyomi"
+        example: "example"
+        btn_submit: "Save changes"

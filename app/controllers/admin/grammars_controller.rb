@@ -3,7 +3,7 @@ class Admin::GrammarsController < Admin::AdminController
   before_action :load_grammar, only: [:show, :edit, :update, :destroy]
 
   def index
-    @grammars = Grammar.all
+    @grammars = params[:lesson_id].present? ? Grammar.by_lesson(params[:lesson_id]) : Grammar.all
   end
 
   def new

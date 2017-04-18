@@ -1,11 +1,11 @@
-function destroyGrammar(){
-  $(".btn-delete-gramar").click(function(){
+function destroyVocabulary(){
+  $(".btn-delete-vocabulary").click(function(){
     $category = $(this).closest('tr');
     if(confirm('Are you sure ?'))
     {
       $.ajax({
         type: "DELETE",
-        url: '/admin/grammars/' + $(this).data('value'),
+        url: '/admin/vocabularies/' + $(this).data('value'),
         dataType: "json",
         success: function(data){
           $category.remove();
@@ -17,8 +17,8 @@ function destroyGrammar(){
       })
     }
   });
-  }
+}
 
-$(document).ready(function() {
-  destroyGrammar();
-});
+$(document).ready(function(){
+  destroyVocabulary();
+})

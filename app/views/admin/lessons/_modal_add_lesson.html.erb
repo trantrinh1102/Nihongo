@@ -79,7 +79,7 @@
                     </label>
                   </div>
                   <div class="col-md-2">
-                    <%= f.file_field :file, accept: ".csv", class:"btn btn-info btn-xs button", title: "Upload file",
+                    <%= f.file_field :file_kanji, accept: ".csv", class:"btn btn-info btn-xs button", title: "Upload file",
                       disabled: true, id: "importKanji" %>
                   </div>
                 </div>
@@ -97,15 +97,15 @@
                       <div class="col-md-6">
                         <div class="form-group label-floating is-empty">
                           <label class="control-label"><%= t ".character" %></label>
-                          <%= text_field_tag "lesson[kanjis_attributes][0][character]", nil, id:"kanji_title",
-                            class: "form-control" %>
+                          <%= text_field_tag "lesson[kanjis_attributes][0][character]", nil, id:"kanji_character",
+                            class: "form-control", required: true  %>
                           <span class="material-input"></span>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group label-floating is-empty">
                           <label class="control-label"><%= t ".vietnamese" %></label>
-                          <%= text_field_tag "lesson[kanjis_attributes][0][vietnamese]", nil, id:"vietnamese",
+                          <%= text_field_tag "lesson[kanjis_attributes][0][vietnamese]", nil, id:"kanji_vietnamese",
                             class: "form-control" %>
                           <span class="material-input"></span>
                         </div>
@@ -115,7 +115,7 @@
                       <div class="col-md-6">
                         <div class="form-group label-floating is-empty">
                           <label class="control-label"><%= t ".kunyomi" %></label>
-                          <%= text_field_tag "lesson[kanjis_attributes][0][kunyomi]", nil, id:"kunyomi",
+                          <%= text_field_tag "lesson[kanjis_attributes][0][kunyomi]", nil, id:"kanji_kunyomi",
                             class: "form-control" %>
                           <span class="material-input"></span>
                         </div>
@@ -123,7 +123,7 @@
                       <div class="col-md-6">
                         <div class="form-group label-floating is-empty">
                           <label class="control-label"><%= t ".onyomi" %></label>
-                          <%= text_field_tag "lesson[kanjis_attributes][0][onyomi]", nil, id:"onyomi",
+                          <%= text_field_tag "lesson[kanjis_attributes][0][onyomi]", nil, id:"kanji_onyomi",
                             class: "form-control" %>
                         </div>
                       </div>
@@ -132,7 +132,7 @@
                       <div class="col-md-12">
                         <div class="form-group label-floating is-empty">
                           <label class="control-label"><%= t ".example" %></label>
-                          <%= text_field_tag "lesson[kanjis_attributes][0][example]", nil, id:"example",
+                          <%= text_field_tag "lesson[kanjis_attributes][0][example]", nil, id:"kanji_example",
                             class: "form-control" %>
                         </div>
                       </div>
@@ -145,26 +145,77 @@
                 <div class="ripple-container"></div></button>
               </div>
               <div class="tab-pane" id="vocabulary">
-                <div class="form-group">
-                  <div class="row">
-                    <div class="col-md-3">
-                      <label><%= t ".name" %></label>
+                <div class="row importCSVVoca">
+                  <div class="checkbox col-md-1">
+                    <label>
+                      <input type="checkbox" name="optionsCheckboxes" id="checkboxImportVocabulary">
+                      <span class="checkbox-material"><span class="check"></span></span>
+                    </label>
+                  </div>
+                  <div class="col-md-2">
+                    <%= f.file_field :file_voca, accept: ".csv", class:"btn btn-info btn-xs button", title: "Upload file",
+                      disabled: true, id: "importVoca" %>
+                  </div>
+                </div>
+                <div class="lesson_voca_form content-block-input-clones">
+                  <div class="card input-form-voca clone-item">
+                    <div class="row">
+                      <div class="col-md-1 pull-right">
+                        <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs remove-clone"
+                          data-original-title="Remove" data-value="1">
+                        <i class="material-icons">close</i>
+                        <div class="ripple-container"></div></button>
+                      </div>
                     </div>
-                    <div class="col-md-8">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group label-floating is-empty">
+                          <label class="control-label"><%= t ".character" %></label>
+                          <%= text_field_tag "lesson[vocabularies_attributes][0][japanese]", nil, id:"voca_japanese",
+                            class: "form-control" %>
+                          <span class="material-input"></span>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group label-floating is-empty">
+                          <label class="control-label"><%= t ".vietnamese" %></label>
+                          <%= text_field_tag "lesson[vocabularies_attributes][0][vietnamese]", nil, id:"voca_vietnamese",
+                            class: "form-control" %>
+                          <span class="material-input"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group label-floating is-empty">
+                          <label class="control-label"><%= t ".romaji" %></label>
+                          <%= text_field_tag "lesson[vocabularies_attributes][0][romaji]", nil, id:"voca_romaji",
+                            class: "form-control" %>
+                          <span class="material-input"></span>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <label><%= t ".image" %></label>
+                        <%= file_field_tag "lesson[vocabularies_attributes][0][image]", id:"voca_image", title: "Upload file" %>
+                      </div>
+                      <div class="col-md-3">
+                        <label><%= t ".sound" %></label>
+                        <%= file_field_tag "lesson[vocabularies_attributes][0][audio]", id:"voca_audio", title: "Upload file" %>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group label-floating is-empty">
+                          <label class="control-label"><%= t ".description" %></label>
+                          <%= text_field_tag "lesson[vocabularies_attributes][0][description]", nil, id:"voca_description",
+                            class: "form-control" %>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="form-group">
-                  <div class="row">
-                    <div class="col-md-3">
-                      <label><%= t ".name" %></label>
-                    </div>
-                    <div class="col-md-8">
-                    </div>
-                  </div>
-                </div>
-                <button type="button" class="btn btn-info btn-xs btn-delete-lesson"
-                  data-original-title="Add" ">
+                <button type="button" class="btn btn-info btn-xs btn-add-lesson-voca"
+                  data-original-title="Add">
                   <i class="material-icons">add</i>
                 <div class="ripple-container"></div></button>
               </div>

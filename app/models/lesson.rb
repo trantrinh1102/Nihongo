@@ -1,5 +1,6 @@
 class Lesson < ApplicationRecord
-  attr_accessor :file
+  attr_accessor :file_kanji, :file_voca
+
   belongs_to :category
 
   has_many :videos
@@ -11,4 +12,6 @@ class Lesson < ApplicationRecord
   validates :name, :description, presence: true
 
   accepts_nested_attributes_for :kanjis, allow_destroy: true
+  accepts_nested_attributes_for :vocabularies, allow_destroy: true
+
 end

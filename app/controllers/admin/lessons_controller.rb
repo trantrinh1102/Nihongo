@@ -16,9 +16,12 @@ class Admin::LessonsController <  Admin::AdminController
   end
 
   def create
+    binding.pry
     @lesson = Lesson.new lesson_params
     if @lesson.save
-      Kanji.import_csv @lesson.id, lesson_params[:file] if lesson_params[:file].present?
+      Kanji.import_csv @lesson.id, lesson_params[:file_kanji] if lesson_params[:file_kanji].present?
+      Vocabulary.import_csv @lesson.id, lesson_params[:file_voca] if lesson_params[:file_voca].present?
+
       add_message_flash(:success, t("admin.created"))
     else
       add_message_flash(:error, t("admin.failed"))
@@ -52,8 +55,9 @@ class Admin::LessonsController <  Admin::AdminController
 
   private
   def lesson_params
-    params.require(:lesson).permit :name, :description, :category_id, :file,
-      kanjis_attributes: [:id, :character, :vietnamese, :onyomi, :kunyomi, :example, :_destroy]
+    params.require(:lesson).permit :name, :description, :category_id, :file_kanji, :file_voca,
+      kanjis_attributes: [:id, :character, :vietnamese, :onyomi, :kunyomi, :example, :_destroy],
+      vocabularies_attributes: [:id, :japanese, :vietnamese, :romaji, :audio, :image, :description, :_destroy]
   end
 
   def load_lesson

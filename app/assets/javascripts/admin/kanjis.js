@@ -1,11 +1,11 @@
-function destroyGrammar(){
-  $(".btn-delete-gramar").click(function(){
+function destroykanji(){
+  $(".btn-delete-kanji").click(function(){
     $category = $(this).closest('tr');
     if(confirm('Are you sure ?'))
     {
       $.ajax({
         type: "DELETE",
-        url: '/admin/grammars/' + $(this).data('value'),
+        url: '/admin/kanjis/' + $(this).data('value'),
         dataType: "json",
         success: function(data){
           $category.remove();
@@ -20,5 +20,5 @@ function destroyGrammar(){
   }
 
 $(document).ready(function() {
-  destroyGrammar();
+  destroykanji();
 });

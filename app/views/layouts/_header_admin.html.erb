@@ -31,16 +31,22 @@
         <% end %>
       </li>
       <li>
-          <a href="#">
-              <i class="material-icons">bubble_chart</i>
-              <p>Icons</p>
-          </a>
+        <%= link_to admin_grammars_path, data: {original_title: "Grammars"} do %>
+          <i class="material-icons">content_paste</i>
+          <p>Grammars</p>
+        <% end %>
       </li>
       <li>
-          <a href="#">
-              <i class="material-icons">location_on</i>
-              <p>Maps</p>
-          </a>
+        <%= link_to admin_kanjis_path, data: {original_title: "Kanjis"} do %>
+          <i class="material-icons info">dashboard</i>
+          <p>Kanjis</p>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_vocabularies_path, data: {original_title: "Vocabularies"} do %>
+          <i class="material-icons info">dashboard</i>
+          <p>Vocabularies</p>
+        <% end %>
       </li>
       <li>
           <a href="#">

@@ -47,6 +47,19 @@ class Admin::KanjisController < Admin::AdminController
     redirect_to admin_kanjis_path
   end
 
+  def destroy
+    if @kanji.destroy
+      flash.now[:success] = t "admin.destroy"
+    end
+    respond_to do |format|
+      format.json do
+        render json:{
+          flash: flash
+        }
+      end
+    end
+  end
+
   private
   def kanji_params
     params.require(:kanji).permit :character, :vietnamese, :onyomi, :kunyomi, :example, :file, :lesson_id

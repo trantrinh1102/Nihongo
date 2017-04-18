@@ -46,7 +46,7 @@
                 <% @kanjis.each_with_index do |kanji, index| %>
                   <tr>
                     <td><%= index + 1 %></td>
-                    <td><%= kanji.lesson.name %></td>
+                    <td><%= kanji.lesson&.name %></td>
                     <td><%= kanji.character %></td>
                     <td><%= kanji.onyomi %></td>
                     <td><%= kanji.kunyomi %></td>
@@ -65,7 +65,7 @@
                         <i class="fa fa-edit"></i>
                       <% end %>
                       <button type="button" rel="tooltip" data-placement="left" data-value="<%= kanji.id %>"
-                        class="btn btn-danger btn-simple btn-icon " id="btn-delete-gramar" data-original-title="Remove">
+                        class="btn btn-danger btn-simple btn-icon btn-delete-kanji" data-original-title="Remove">
                         <i class="fa fa-times"></i>
                       </button>
                     </td>

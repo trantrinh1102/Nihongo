@@ -5,8 +5,8 @@ class CreateVocabularies < ActiveRecord::Migration[5.0]
       t.string :japanese
       t.string :vietnamese
       t.string :romaji
-      t.string :audio_link
-      t.string :image_link
+      t.string :audio
+      t.string :image
       t.text :description
 
       t.timestamps

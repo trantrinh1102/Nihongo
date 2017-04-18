@@ -1,0 +1,5 @@
+$("section.modal-content").html(
+  "<%= j render "modal_add_vocabulary", vocabulary: @vocabulary, lesson_id: params[:lesson_id] %>");
+$("#addVocabulary").modal("show");
+cloneLessonVoca();
+checkBoxEvent();

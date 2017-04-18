@@ -84,7 +84,6 @@ en:
         description: "Description"
         btn_close: "Cancel"
         btn_update_lesson: "Save changes"
-
     kanjis:
       index:
         title: "List all kanji"

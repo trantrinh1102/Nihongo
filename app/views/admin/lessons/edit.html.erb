@@ -77,6 +77,25 @@
           </div>
         </div>
       </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header" data-background-color="blue">
+            <i class="material-icons">question_answer</i>
+            <p class="category">vocabulary</p>
+          </div>
+          <div class="card-content">
+            <h3 class="title">
+              <%= @lesson.tests.size %><small>Tests</small></h3>
+              <%= link_to "Add New Kanji", new_admin_test_path(lesson_id: @lesson.id), class:"btn btn-success", remote: true %>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">update</i>
+              <%= link_to "Get more details", admin_tests_path(lesson_id: @lesson.id) %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="row">
       <div class="card">

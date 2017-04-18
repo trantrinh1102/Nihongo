@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     resources :lesson_kanjis
     resources :videos
     resources :vocabularies
+    resources :tests
+    resources :questions
   end
 end

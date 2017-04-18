@@ -70,15 +70,6 @@ ActiveRecord::Schema.define(version: 20170412094414) do
     t.index ["lesson_id"], name: "index_lesson_kanjis_on_lesson_id"
   end
 
-  create_table "lesson_tests", force: :cascade do |t|
-    t.integer  "test_id"
-    t.integer  "lesson_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["lesson_id"], name: "index_lesson_tests_on_lesson_id"
-    t.index ["test_id"], name: "index_lesson_tests_on_test_id"
-  end
-
   create_table "lesson_vocabularies", force: :cascade do |t|
     t.integer  "lesson_id"
     t.integer  "vocabulary_id"
@@ -115,10 +106,12 @@ ActiveRecord::Schema.define(version: 20170412094414) do
   end
 
   create_table "tests", force: :cascade do |t|
+    t.integer  "lesson_id"
     t.string   "name"
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["lesson_id"], name: "index_tests_on_lesson_id"
   end
 
   create_table "users", force: :cascade do |t|

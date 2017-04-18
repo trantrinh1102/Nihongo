@@ -1,5 +1,5 @@
 en:
-  hello: "Hello world"
+  Hello: "Hello world"
   layouts:
     footer_admin:
       home: "Home"
@@ -111,3 +111,29 @@ en:
         onyomi: "onyomi"
         example: "example"
         btn_submit: "Save changes"
+    tests:
+      index:
+        list_test: "List lesson test"
+        btn_add_test: "Add new test"
+        lesson: "Lesson"
+        name: "Name"
+        description: "Description"
+        created_at: "Created At"
+        action: "Actions"
+      search_form:
+        search: "Search"
+      modal_add_test:
+        title: "Form add lesson test"
+        placeholder_name: "Name"
+        placeholder_description: "Description"
+        lesson: "Lesson"
+        btn_add_test: "Submit"
+        btn_close: "Cancel"
+      modal_update_test:
+        title: "Form update lesson test"
+        placeholder_name: "Name"
+        placeholder_description: "Description"
+        btn_update_test: "Save changes"
+        btn_close: "Cancel"
+      show:
+        title: "About lesson test"

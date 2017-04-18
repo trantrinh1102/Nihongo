@@ -1,14 +1,14 @@
-function destroykanji(){
-  $(".btn-delete-kanji").click(function(){
-    $kanji = $(this).closest('tr');
+function destroyLessonTest(){
+  $(".btn-delete-test").click(function(){
+    $test = $(this).closest('tr');
     if(confirm('Are you sure ?'))
     {
       $.ajax({
         type: "DELETE",
-        url: '/admin/kanjis/' + $(this).data('value'),
+        url: '/admin/tests/' + $(this).data('value'),
         dataType: "json",
         success: function(data){
-          $kanji.remove();
+          $test.remove();
           $('#flash-messages').replaceWith('<div class="alert alert-success %>">'+data.flash[0][1]+'</div>')
         },
         error: function(error){
@@ -20,5 +20,5 @@ function destroykanji(){
   }
 
 $(document).ready(function() {
-  destroykanji();
+  destroyLessonTest();
 });

@@ -7,7 +7,7 @@ class Lesson < ApplicationRecord
   has_many :grammars
   has_many :vocabularies
   has_many :kanjis
-  has_many :lesson_test
+  has_many :tests
 
   validates :name, :description, presence: true
 

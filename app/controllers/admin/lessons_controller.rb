@@ -16,7 +16,6 @@ class Admin::LessonsController <  Admin::AdminController
   end
 
   def create
-    binding.pry
     @lesson = Lesson.new lesson_params
     if @lesson.save
       Kanji.import_csv @lesson.id, lesson_params[:file_kanji] if lesson_params[:file_kanji].present?

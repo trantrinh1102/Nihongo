@@ -1,0 +1,69 @@
+<div class="content">
+  <%= render "layouts/flash", flash: flash %>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-plain">
+          <div class="card card-nav-tabs">
+            <div class="card-header" data-background-color="blue">
+              <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                  <span class="nav-tabs-title">Table:</span>
+                  <ul class="nav nav-tabs" data-tabs="tabs">
+                    <li class="active pull-right">
+                      <%= link_to new_admin_question_path, data: {original_title: "New"}, remote: true  do %>
+                        <i class="material-icons">bug_report</i>
+                        <%= t ".btn_add_question" %>
+                      <div class="ripple-container"></div>
+                      <% end %>
+                    </li>
+                    <li class="">
+                      <i class="material-icons">list</i>
+                        <%= t ".title" %>
+                      <div class="ripple-container"></div></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="pull-right">
+            </div>
+          </div>
+          <div class="card-content table-responsive">
+            <table class="table table-hover">
+              <thead class="text-center">
+                <th><%= t ".id" %></th>
+                <th><%= t ".question" %></th>
+                <th><%= t ".correct_answer" %></th>
+                </th>
+                <th><%= t ".action" %></th>
+              </thead>
+              <tbody>
+                <% @test.questions.each_with_index do |question, index| %>
+                  <tr id="test-<%= question.id %>">
+                    <td><%= index + 1 %></td>
+                    <td><%= question.content %></td>
+                    <td><%=  %></td>
+                    <td><%= question.created_at.strftime("%m/%d/%Y") %></td>
+                    <td class="text-center">
+                      <%= link_to edit_admin_question_path(question), class: "btn btn-info btn-simple btn-xs",
+                        data: {original_title: "Edit"}, remote: true do %>
+                        <i class="material-icons info">edit</i>
+                      <% end %>
+                      <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs btn-delete-test"
+                        data-original-title="Remove" data-value="<%= question.id %>">
+                        <i class="material-icons">close</i>
+                      <div class="ripple-container"></div></button>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

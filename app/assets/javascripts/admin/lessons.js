@@ -40,7 +40,7 @@ function cloneLessonKanji(){
     removeCloneItem(clone.find(".remove-clone"));
     // }
   });
-  $('.content-block-input-clones .remove-clone').click(function(e){
+  $('.lesson_kanji_form .content-block-input-clones .remove-clone').click(function(e){
     $(e.target).closest(".clone-item").remove();
   });
 }
@@ -70,7 +70,7 @@ function cloneLessonVoca(){
     removeCloneItem(clone.find(".remove-clone"));
     // }
   });
-  $('.content-block-input-clones .remove-clone').click(function(e){
+  $('.lesson_voca_form .content-block-input-clones .remove-clone').click(function(e){
     $(e.target).closest(".clone-item").remove();
   });
 }

@@ -1,0 +1,10 @@
+$("section.modal-content").html(
+  "<%= j render "modal_update_question", question: @question %>");
+$("#updateQuestion").modal("show");
+$(function() {
+    $.material.init();
+});
+resetTitleAnswer();
+cloneAnswer();
+groupRadioButton();
+removeCloneItemAnswer($(".remove-clone"));

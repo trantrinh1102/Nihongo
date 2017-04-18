@@ -136,4 +136,32 @@ en:
         btn_update_test: "Save changes"
         btn_close: "Cancel"
       show:
+        id: "No"
+        question: "Question"
+        correct_answer: "Answer Correct"
+        created_at: "Created At"
+        action: "Actions"
         title: "About lesson test"
+        btn_add_question: "Add new questions"
+    questions:
+      modal_add_question:
+        title: "Add Question"
+        question_content: "Question"
+        btn_add_question: "Submit"
+        btn_close: "Cancel"
+        content: "Content"
+        answer: "Answer"
+        answer1: "Answer 1"
+        add_new_answer: "Add new answer"
+        correct_answer: "Correct Answer"
+      modal_update_question:
+        title: "Update Question"
+        question_content: "Question"
+        btn_update_question: "Save changes"
+        btn_close: "Cancel"
+        content: "Content"
+        answer: "Answer"
+        answer1: "Answer 1"
+        add_new_answer: "Add new answer"
+        correct_answer: "Correct Answer"
+

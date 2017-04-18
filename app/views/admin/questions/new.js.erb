@@ -1,0 +1,8 @@
+$("section.modal-content").html(
+  "<%= j render "modal_add_question", question: @question, test_id: params[:test_id] %>");
+$("#addQuestion").modal("show");
+$(function() {
+    $.material.init();
+});
+cloneAnswer();
+groupRadioButton();

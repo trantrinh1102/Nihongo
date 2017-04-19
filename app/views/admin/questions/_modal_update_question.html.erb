@@ -1,0 +1,74 @@
+<div class="modal fade updateQuestion" id="updateQuestion" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modalupdateQuestion modal-lg ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close"  data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <h2 class="modal-title" id="myModalLabel">
+          <small><%= t ".title" %></small>
+        </h2>
+      </div>
+      <div class="modal-body">
+        <%= form_for [:admin, question], multipart: true do |f| %>
+          <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-2">
+                <label><%= t ".content" %></label>
+              </div>
+              <div class="col-md-8">
+                <%= f.text_area :content, class: "form-control", required: true %>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" data-background-color="blue">
+              <p class="title"><%= t ".answer" %></p>
+            </div>
+            <div class="card-content contentAnswer update-content-block-input-clones">
+              <%= f.fields_for :answers do |answer| %>
+                <div class="card card-stats answersForm clone-item ">
+                  <div class="card-content answerFormInput">
+                    <div class="col-md-1 pull-right">
+                      <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs remove-clone"
+                        data-original-title="Remove" data-value="1">
+                      <i class="material-icons">close</i>
+                      <div class="ripple-container"></div></button>
+                    </div>
+                    <h5 class="title pull-left"><%= t ".answer1" %></h5>
+                    <div class="form-group">
+                      <%= answer.text_field :content, required: true , class: "form-control", id:"content"%>
+                      <div class="radio blue">
+                        <label>
+                          <%= answer.hidden_field :_destroy, id:"answer_destroy" %>
+                          <%= answer.hidden_field :is_correct, id:"input_is_correct" %>
+                          <%= answer.radio_button :is_correct, true, checked: answer.object.is_correct, id:"is_correct" %>
+                          <%= t ".correct_answer" %>
+                        </label>
+                      </div>
+                      <%= %>
+                    </div>
+                  </div>
+                  </br>
+                </div>
+              <% end %>
+            </div>
+            <button type="button" class="btn btn-info btn-xs btn-add-question"
+              data-original-title="Add" ">
+              <i class="material-icons">add</i>
+            <div class="ripple-container"></div><%= t ".add_new_answer" %></button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              <%= t ".btn_close" %></button>
+            <button type="submit" class="btn btn-info"><%= t ".btn_update_question" %></button>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

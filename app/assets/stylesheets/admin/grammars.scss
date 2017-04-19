@@ -24,8 +24,7 @@ img {
   overflow: scroll;
   overflow-x: hidden;
 }
-// .modalAddlesson{
-//   width: 800px !important;
-//   margin-left:auto;
-//   margin-right:auto;
-// }
+.contentAnswer{
+  max-height: 400px;
+  overflow-y: auto;
+}

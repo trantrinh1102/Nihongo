@@ -46,7 +46,7 @@
                 <th>
                   <%= sort_link @search_test, :created_at, t(".created_at") %>
                 </th>
-                <th><%= t ".action" %></th>
+                <th class="text-center"><%= t ".action" %></th>
               </thead>
               <tbody>
                 <% @tests.each_with_index do |test, index| %>
@@ -57,6 +57,10 @@
                     <td><%= test.description %></td>
                     <td><%= test.created_at.strftime("%m/%d/%Y") %></td>
                     <td class="text-center">
+                      <%= link_to admin_test_path(test), class: "btn btn-info btn-simple btn-xs",
+                        data: {original_title: "Show"} do %>
+                        <i class="material-icons success">visibility</i>
+                      <% end %>
                       <%= link_to edit_admin_test_path(test), class: "btn btn-info btn-simple btn-xs",
                         data: {original_title: "Edit"}, remote: true do %>
                         <i class="material-icons info">edit</i>

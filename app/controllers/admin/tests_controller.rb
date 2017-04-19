@@ -9,7 +9,7 @@ class Admin::TestsController < Admin::AdminController
   end
 
   def show
-    @questions = @test.questions
+    @questions = @test.questions.includes(:answers)
   end
 
   def index

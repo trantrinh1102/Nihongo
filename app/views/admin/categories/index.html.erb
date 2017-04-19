@@ -11,7 +11,7 @@
                   <span class="nav-tabs-title">Table:</span>
                   <ul class="nav nav-tabs" data-tabs="tabs">
                     <li class="active pull-right">
-                      <%= link_to new_admin_category_path, data: {original_title: "New"} do %>
+                      <%= link_to new_admin_category_path, data: {original_title: "New"}, remote: true do %>
                         <i class="material-icons">bug_report</i>
                         <%= t ".btn_add_category" %>
                       <div class="ripple-container"></div>

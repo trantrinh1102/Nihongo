@@ -46,7 +46,7 @@
                 <th>
                   <%= sort_link @search_lesson, :name, t(".created_at") %>
                 </th>
-                <th><%= t ".action" %></th>
+                <th class="text-center"><%= t ".action" %></th>
               </thead>
               <tbody>
                 <% @lessons.each_with_index do |lesson, index| %>

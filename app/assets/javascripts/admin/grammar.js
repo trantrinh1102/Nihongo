@@ -1,6 +1,6 @@
 function destroyGrammar(){
   $(".btn-delete-gramar").click(function(){
-    $category = $(this).closest('tr');
+    $grammar = $(this).closest('tr');
     if(confirm('Are you sure ?'))
     {
       $.ajax({
@@ -8,7 +8,7 @@ function destroyGrammar(){
         url: '/admin/grammars/' + $(this).data('value'),
         dataType: "json",
         success: function(data){
-          $category.remove();
+          $grammar.remove();
           $('#flash-messages').replaceWith('<div class="alert alert-success %>">'+data.flash[0][1]+'</div>')
         },
         error: function(error){

@@ -39,7 +39,7 @@
                   <th><%= t ".vietnamese" %></th>
                   <th><%= t ".example" %></th>
                   <th><%= t ".created_at" %></th>
-                  <th><%= t ".action" %></th>
+                  <th class="text-center"><%= t ".action" %></th>
                 </tr>
               </thead>
               <tbody>
@@ -56,10 +56,6 @@
                       <%= kanji.created_at.strftime("%F") %>
                     </td>
                     <td class="td-actions text-center">
-                      <%= link_to admin_kanji_path(kanji), class:"btn btn-info btn-simple btn-icon",
-                        data: {original_title: "View"} do %>
-                        <i class="fa fa-image"></i>
-                      <% end %>
                       <%= link_to edit_admin_kanji_path(kanji), class:"btn btn-success btn-simple btn-icon",
                         data: {original_title: "Edit"}, remote: true do %>
                         <i class="fa fa-edit"></i>

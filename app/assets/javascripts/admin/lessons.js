@@ -1,6 +1,6 @@
 function destroyLesson(){
   $(".btn-delete-lesson").click(function(){
-    $category = $(this).closest('tr');
+    $lesson = $(this).closest('tr');
     if(confirm('Are you sure ?'))
     {
       $.ajax({
@@ -8,7 +8,7 @@ function destroyLesson(){
         url: '/admin/lessons/' + $(this).data('value'),
         dataType: "json",
         success: function(data){
-          $category.remove();
+          $lesson.remove();
           $('#flash-messages').replaceWith('<div class="alert alert-success %>">'+data.flash[0][1]+'</div>')
         },
         error: function(error){

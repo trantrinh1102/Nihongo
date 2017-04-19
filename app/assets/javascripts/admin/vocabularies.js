@@ -1,6 +1,6 @@
 function destroyVocabulary(){
   $(".btn-delete-vocabulary").click(function(){
-    $category = $(this).closest('tr');
+    $vocabulary = $(this).closest('tr');
     if(confirm('Are you sure ?'))
     {
       $.ajax({
@@ -8,7 +8,7 @@ function destroyVocabulary(){
         url: '/admin/vocabularies/' + $(this).data('value'),
         dataType: "json",
         success: function(data){
-          $category.remove();
+          $vocabulary.remove();
           $('#flash-messages').replaceWith('<div class="alert alert-success %>">'+data.flash[0][1]+'</div>')
         },
         error: function(error){

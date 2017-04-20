@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
-  root "admin/categories#index"
+  root "static_page#home"
 
   namespace :admin do
     resources :categories

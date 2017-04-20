@@ -16,6 +16,8 @@
 //= require bootstrap
 //= require demo
 //= require material-dashboard
+//= require material-kit
+//= require nouislider.min
 //= require material.min
 //= require chartist.min
 //= require ckeditor/init

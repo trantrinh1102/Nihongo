@@ -14,5 +14,7 @@
  *= require_self
  *= require bootstrap.min
  *= require material-dashboard
- *= require demo
+ *= require user
+ *= require dashboard
+ *= require material-kit
  */

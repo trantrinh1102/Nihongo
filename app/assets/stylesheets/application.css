@@ -16,5 +16,6 @@
  *= require material-dashboard
  *= require user
  *= require dashboard
- *= require material-kit
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";

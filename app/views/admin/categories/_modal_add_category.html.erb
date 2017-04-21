@@ -1,5 +1,6 @@
 <div class="modal fade" id="addCategory" tabindex="-1" role="dialog"
   aria-labelledby="myModalLabel" aria-hidden="true">
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -11,11 +12,15 @@
           <%= t ".title" %>
         </h4>
       </div>
-      <%= form_for [:admin, category], remote: true do |f| %>
+      <%= form_for [:admin, category], multipart: true do |f| %>
         <div class="modal-body">
           <div class="form-group">
             <label><%= t ".name" %></label>
             <%= f.text_field :name, class: "form-control",  placeholder: t(".placeholder_name"), required: true %>
+          </div>
+          <div class="">
+            <label><%= t ".image" %></label>
+            <%= f.file_field :image, title: "Upload file"  %>
           </div>
           <div class="form-group">
             <label><%= t ".description" %></label>

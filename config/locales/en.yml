@@ -47,6 +47,7 @@ en:
         description: "Description"
         btn_close: "Cancel"
         btn_add_category: "Save"
+        image: "Image"
       modal_update_category:
         title: "Form Update Category"
         placeholder_name: "Enter name"
@@ -55,6 +56,8 @@ en:
         description: "Description"
         btn_close: "Cancel"
         btn_update_category: "Save changes"
+        image: "Image"
+
     lessons:
       search_form:
         search: "search"

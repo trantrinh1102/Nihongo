@@ -1,3 +1,166 @@
-// Place all the styles related to the StaticPage controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.index-page .wrapper > .header {
+  height: 90vh;
+}
+.index-page .brand {
+  margin-top: 30vh;
+  color: #FFFFFF;
+  text-align: center;
+}
+.index-page .brand h1 {
+  font-size: 4.8em;
+  font-weight: 600;
+}
+.index-page .brand h3 {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  max-width: 400px;
+  margin: 10px auto 0;
+}
+.index-page .section-basic {
+  padding-top: 15px;
+}
+.index-page .header-filter:after {
+  background: rgba(101, 47, 142, 0.64);
+  background: linear-gradient(45deg, rgba(101, 47, 142, 0.88) 0%, rgba(125, 46, 185, 0.45) 100%);
+  background: -moz-linear-gradient(135deg, rgba(101, 47, 142, 0.88) 0%, rgba(125, 46, 185, 0.45) 100%);
+  background: -webkit-linear-gradient(135deg, rgba(101, 47, 142, 0.88) 0%, rgba(125, 46, 185, 0.45) 100%);
+}
+.landing-page .navbar-transparent,
+.profile-page .navbar-transparent,
+.signup-page .navbar-transparent,
+.index-page .navbar-transparent {
+  padding-top: 25px;
+}
+.wrapper > .header {
+  min-height: 300px;
+  background-position: center center;
+  background-size: cover;
+}
+.navbar-fixed-top {
+  border-radius: 0;
+}
+.main {
+  background: #FFFFFF;
+  position: relative;
+  z-index: 3;
+}
+.navbar.navbar-primary .dropdown-menu li > a:hover, .navbar.navbar-primary .dropdown-menu li > a:focus {
+  color: #FFFFFF;
+  background-color: #9c27b0;
+}
+.main-raised {
+  margin: -60px 30px 0px;
+  border-radius: 6px;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-weight: 500;
+  color: #3C4858;
+}
+.header-filter:after {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 50%;
+  display: block;
+  left: 0;
+  top: 0;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.navbar, .navbar.navbar-default {
+  background-color: #9c27b0;
+  color: #FFFFFF;
+}
+footer {
+  padding: 15px 0;
+}
+footer ul {
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+footer ul li {
+  display: inline-block;
+}
+footer ul li a {
+  color: inherit;
+  padding: 15px;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  text-decoration: none;
+  position: relative;
+  display: block;
+}
+footer ul li a:hover {
+  text-decoration: none;
+}
+footer .copyright {
+  padding: 15px 0;
+}
+footer .copyright .material-icons {
+  font-size: 18px;
+  position: relative;
+  top: 3px;
+}
+
+legend {
+  border-bottom: 0;
+}
+.navbar .navbar-collapse,
+.navbar .navbar-form {
+  border-top: none;
+  box-shadow: none;
+}
+.navbar .navbar-nav > li > a {
+  color: inherit;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: 400;
+  font-size: 16px !important;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+.navbar.navbar-transparent.navbar-fixed-top {
+  background-color: transparent;
+  box-shadow: none;
+  color: #fff;
+  padding-top: 25px;
+}
+
+.navbar-collapse li:hover {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    color: #FFFFFF;
+    transform: translateX(12) 0.8s;
+}
+.img-thumbnail {
+  border-radius: 1px;
+}
+
+.img-raised {
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.team {
+  margin-top: 80px;
+}
+.team .team-player .title {
+  margin: 30px auto;
+}
+.team .team-player img {
+  max-width: 300px;
+}
+.img-circle {
+  border-radius: 10% !important;
+}
+.carousel-inner img {
+  width: 100%;
+  height: 400px !important;
+}
+.carousel-inner h4 {
+  color: #868A08;
+}
+

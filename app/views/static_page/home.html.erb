@@ -1,44 +1,38 @@
 <div class="main main-raised">
   <div class="section" id="carousel">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-
-        <!-- Carousel Card -->
+    <div class="container">
+      <div class="row">
         <div class="card card-raised card-carousel">
-          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <div id="carousel-example-generic" class="carousel slide .lessonslist" data-ride="carousel">
             <div class="carousel slide" data-ride="carousel">
-
-              <!-- Indicators -->
               <ol class="carousel-indicators">
                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="2"></li>
               </ol>
-
-              <!-- Wrapper for slides -->
               <div class="carousel-inner">
                 <div class="item active">
-                  <img src=<%= asset_path 'cover.jpeg' %> alt="Awesome Image">
+                  <img src=<%= asset_path 'slide1.jpeg' %> alt="Awesome Image">
                   <div class="carousel-caption">
-                    <h4><i class="material-icons">location_on</i> Yellowstone National Park, United States</h4>
+                    <h4><i class="material-icons">favorite_border</i>Nếu quyết định có một hành trình khác biệt, bạn sẽ phải một mình trong hàng ngàn ki-lo-mét.</h4>
+                    <h4><i class="material-icons">favorite_border</i>Nhanh nghĩa là đi chậm mà không bị ngắt quãng</h4>
+                  </div>
+                </div>
+                <div class="item">
+                  <img src=<%= asset_path 'slide2.jpg' %> alt="Awesome Image">
+                  <div class="carousel-caption">
+                    <h4><i class="material-icons">favorite_border</i>偉大なことを成し遂げる為には、行動するだけでなく、夢を持ち、計画を立てるだけでなくてはならない。</h4>
+                    <h4><i class="material-icons">favorite_border</i>Người có khát vọng vươn lên sẽ nghĩ về cách tạo ra cho mình một chiếc thang.</h4>
                   </div>
                 </div>
                 <div class="item">
                   <img src=<%= asset_path 'cover.jpeg' %> alt="Awesome Image">
                   <div class="carousel-caption">
-                    <h4><i class="material-icons">location_on</i> Somewhere Beyond, United States</h4>
-                  </div>
-                </div>
-                <div class="item">
-                  <img src=<%= asset_path 'cover2.jpeg' %> alt="Awesome Image">
-                  <div class="carousel-caption">
-                    <h4><i class="material-icons">location_on</i> Yellowstone National Park, United States</h4>
+                    <h4><i class="material-icons">favorite_border</i>Những đóa hoa đẹp không sinh ra trái ngọt.</h4>
+                    <h4><i class="material-icons">favorite_border</i>Một hành trình dài luôn bắt đầu từ một hành trình ngắn.</h4>
                   </div>
                 </div>
               </div>
-
-              <!-- Controls -->
               <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                 <i class="material-icons">keyboard_arrow_left</i>
               </a>
@@ -48,63 +42,99 @@
             </div>
           </div>
         </div>
-        <!-- End Carousel Card -->
-
+      </div>
+    </div>
+  </div>
+  <div class="section text-center">
+    <h2 class="title">Danh sách các chủ đề</h2>
+    <div class="team">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="team-player">
+            <img src=<%= asset_path 'cover.jpeg' %> alt="Thumbnail Image" class="img-raised img-circle">
+            <h4 class="title">Gigi Hadid <br>
+              <small class="text-muted">Model</small>
+            </h4>
+            <p class="description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
+            <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
+            <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
+            <a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="team-player">
+            <img src=<%= asset_path 'cover.jpeg' %> alt="Thumbnail Image" class="img-raised img-circle">
+            <h4 class="title">Christian Louboutin<br>
+              <small class="text-muted">Designer</small>
+            </h4>
+            <p class="description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
+            <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
+            <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="team-player">
+            <img src=<%= asset_path 'cover.jpeg' %> alt="Thumbnail Image" class="img-raised img-circle">
+            <h4 class="title">Kendall Jenner<br>
+              <small class="text-muted">Model</small>
+            </h4>
+            <p>You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
+            <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-google-plus"></i></a>
+            <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-youtube-play"></i></a>
+            <a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-twitter"></i></a>
           </div>
         </div>
       </div>
     </div>
+  </div>
   <div class="section">
     <div class="container tim-container">
-     <div class="section section-download">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-md-8 col-md-offset-2">
-            <h2>Do you love this UI Kit?</h2>
-            <h4>Cause if you do, it can be yours for FREE. Hit the button below to navigate to Creative Tim where you can find the kit. Start a new project or give an old Bootstrap project a new look!</h4>
+      <div class="section section-download">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-md-8 col-md-offset-2">
+              <h2>Do you love this UI Kit?</h2>
+              <h4>Cause if you do, it can be yours for FREE. Hit the button below to navigate to Creative Tim where you can find the kit. Start a new project or give an old Bootstrap project a new look!</h4>
+            </div>
+            <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
+              <a href="http://www.creative-tim.com/product/material-kit" class="btn btn-primary btn-lg">
+                <i class="material-icons">cloud_download</i> Free Download
+              </a>
+            </div>
           </div>
-          <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
-            <a href="http://www.creative-tim.com/product/material-kit" class="btn btn-primary btn-lg">
-              <i class="material-icons">cloud_download</i> Free Download
+          <br><br>
+          <div class="row text-center">
+            <div class="col-md-8 col-md-offset-2">
+              <h2>Want more?</h2>
+              <h4>We've just launched <a href="http://demos.creative-tim.com/material-kit-pro/presentation.html?ref=utp-freebie" target="_blank">Material Kit PRO</a>. It has a huge number of components, sections and example pages. Start Your Development With A Badass Bootstrap UI Kit inspired by Material Design.</h4>
+            </div>
+            <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
+              <a href="http://demos.creative-tim.com/material-kit-pro/presentation.html?ref=utp-freebie" class="btn btn-upgrade btn-lg" target="_blank">
+                <i class="material-icons">unarchive</i> Upgrade to PRO
+              </a>
+            </div>
+          </div>
+          <div class="row sharing-area text-center">
+            <h3>Thank you for supporting us!</h3>
+            <a href="#" class="btn btn-twitter">
+              <i class="fa fa-twitter"></i>
+              Tweet
+            </a>
+            <a href="#" class="btn btn-facebook">
+              <i class="fa fa-facebook-square"></i>
+              Share
+            </a>
+            <a href="#" class="btn btn-google-plus">
+              <i class="fa fa-google-plus"></i>
+              Share
+            </a>
+            <a href="#" class="btn btn-github">
+              <i class="fa fa-github"></i>
+              Star
             </a>
           </div>
-        </div>
-        <br><br>
-
-        <div class="row text-center">
-          <div class="col-md-8 col-md-offset-2">
-            <h2>Want more?</h2>
-            <h4>We've just launched <a href="http://demos.creative-tim.com/material-kit-pro/presentation.html?ref=utp-freebie" target="_blank">Material Kit PRO</a>. It has a huge number of components, sections and example pages. Start Your Development With A Badass Bootstrap UI Kit inspired by Material Design.</h4>
-          </div>
-          <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
-            <a href="http://demos.creative-tim.com/material-kit-pro/presentation.html?ref=utp-freebie" class="btn btn-upgrade btn-lg" target="_blank">
-              <i class="material-icons">unarchive</i> Upgrade to PRO
-            </a>
-          </div>
-        </div>
-
-        <div class="row sharing-area text-center">
-          <h3>Thank you for supporting us!</h3>
-          <a href="#" class="btn btn-twitter">
-            <i class="fa fa-twitter"></i>
-            Tweet
-          </a>
-          <a href="#" class="btn btn-facebook">
-            <i class="fa fa-facebook-square"></i>
-            Share
-          </a>
-          <a href="#" class="btn btn-google-plus">
-            <i class="fa fa-google-plus"></i>
-            Share
-          </a>
-          <a href="#" class="btn btn-github">
-            <i class="fa fa-github"></i>
-            Star
-          </a>
         </div>
       </div>
     </div>
-
   </div>
-</div>
 </div>

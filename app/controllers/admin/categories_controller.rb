@@ -19,9 +19,7 @@ class Admin::CategoriesController < Admin::AdminController
     else
       add_message_flash(:error, t("admin.failed"))
     end
-    respond_to do |format|
-      format.js
-    end
+    redirect_to :back
   end
 
   def edit
@@ -36,9 +34,7 @@ class Admin::CategoriesController < Admin::AdminController
     else
       add_message_flash(:error, t("admin.failed"))
     end
-    respond_to do |format|
-      format.js
-    end
+    redirect_to :back
   end
 
   def destroy
@@ -56,7 +52,7 @@ class Admin::CategoriesController < Admin::AdminController
 
   private
   def category_params
-    params.require(:category).permit :name, :description
+    params.require(:category).permit :name, :description, :image
   end
 
   def load_category
